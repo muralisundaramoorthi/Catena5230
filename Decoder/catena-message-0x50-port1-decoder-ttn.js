@@ -4,13 +4,13 @@ Name:   catena-message-0x50-port1-decoder-ttn.js
 
 Function:
     This function decodes the record (port 1, format 0x50) sent by the
-    MCCI Catena 5230 Rev A .
+    MCCI Catena 5230 Rev A.
 
 Copyright and License:
     See accompanying LICENSE file
 
 Author:
-    Murali , MCCI Corporation   March 2025
+    Murali , MCCI Corporation   Sep 2025
 
 */
 
