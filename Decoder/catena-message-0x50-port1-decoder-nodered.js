@@ -445,7 +445,7 @@ function Decoder(bytes, port)
         return decoded;
         }
 
-    if (! (port === 1) && ! (port === 3) && ! (port === 4))
+    if (! (port === 1) && ! (port === 3))
         return null;
 
     var uFormat = bytes[0];
@@ -525,8 +525,8 @@ var result = Decoder(bytes, msg.port);
 
 if (result === null)
     {
-    node.error("not port 1/4/fmt 0x50! port=" + msg.port.toString());
-    if (port === 2) {
+    var eMsg =("not port 1 fmt 0x50! port=" + msg.port.toString());
+    if (port === 1) {
         if (Buffer.byteLength(bytes) > 0) {
             eMsg = eMsg + " fmt=" + bytes[0].toString();
         } else {

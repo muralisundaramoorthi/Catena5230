@@ -445,7 +445,7 @@ function Decoder(bytes, port)
         return decoded;
         }
 
-    if (! (port === 1) && ! (port === 3) && ! (port === 4))
+    if (! (port === 1) && ! (port === 3))
         return null;
 
     var uFormat = bytes[0];
