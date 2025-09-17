@@ -487,8 +487,12 @@ function Decoder(bytes, port)
     if (flags & 0x8)
         {
         // we have temp, RH
-        decoded.t = DecodeI16(Parse);
+        decoded.t = DecodeI16(Parse) / 256;
         decoded.rh = DecodeUflt16(Parse) * 100 / 65535.0;
+        decoded.tDewC = dewpoint(decoded.t, decoded.rh);
+        var tHeat = CalculateHeatIndex(decoded.tempC * 1.8 + 32, decoded.rh);
+        if (tHeat !== null)
+            decoded.tHeatIndexC = tHeat;
         }
 
     if (flags & 0x10)
